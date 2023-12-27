@@ -210,9 +210,9 @@
     }
 
     function pairingBiological(base1, base2) {
-        if ((base1 === 'A' && base2 === 'U') || (base1 === 'U' && base2 === 'A') ||
-            (base1 === 'A' && base2 === 'T') || (base1 === 'T' && base2 === 'A') ||
-            (base1 === 'C' && base2 === 'G') || (base1 === 'G' && base2 === 'C')) {
+        if ((base1.toUpperCase() === 'A' && base2.toUpperCase() === 'U') || (base1.toUpperCase() === 'U' && base2.toUpperCase() === 'A') ||
+            (base1.toUpperCase() === 'A' && base2.toUpperCase() === 'T') || (base1.toUpperCase() === 'T' && base2.toUpperCase() === 'A') ||
+            (base1.toUpperCase() === 'C' && base2.toUpperCase() === 'G') || (base1.toUpperCase() === 'G' && base2.toUpperCase() === 'C')) {
             return 1;
         }
         return 0;
