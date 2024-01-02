@@ -51,13 +51,13 @@
     <h3>Show</h3>
 
     <form class="optionsform">
-      <label class="options"><input type="checkbox" class="form-check-input"  onclick="nc.displayNumbering(this.checked)" checked> Numbering</label><br>
-      <label class="options"><input type="checkbox" class="form-check-input"  onclick="nc.displayNodeOutline(this.checked)" checked> Node Outline</label><br>
+      <label class="options"><input type="checkbox" class="form-check-input"  onclick="nc.displayNumbering(this.checked)"> Numbering</label><br>
+      <label class="options"><input type="checkbox" class="form-check-input"  onclick="nc.displayNodeOutline(this.checked)"> Node Outline</label><br>
       <label class="options"><input type="checkbox" class="form-check-input"  onclick="nc.displayNodeLabel(this.checked)" checked> Node Label</label><br>
-      <label class="options"><input type="checkbox" class="form-check-input"  onclick="nc.displayLinks(this.checked)" checked> Links</label><br>
+      <label class="options"><input type="checkbox" class="form-check-input"  onclick="nc.displayLinks(this.checked)"> Links</label><br>
       <!--label class="options"><input type="checkbox" onclick="nc.displayPseudoknotLinks(this.checked)" checked>Pseudoknot Links</label><br-->
       <!--label class="options"><input type="checkbox" onclick="nc.displayProteinLinks(this.checked)" checked>Protein Links</label><br-->
-      <label class="options"><input type="checkbox" class="form-check-input"  onclick="nc.displayDirectionArrows(this.checked)" checked> Direction Arrows</label><br>
+      <label class="options"><input type="checkbox" class="form-check-input"  onclick="nc.displayDirectionArrows(this.checked)"> Direction Arrows</label><br>
     </form>
 
     <h3>Text</h3>
@@ -82,6 +82,9 @@
     <form class="optionsform">
         <button class="btn btn-primary rounded-pill px-3" type="button" onclick="load('WELCOME IN TEXT FOLDER', '...(((((((..((((((.........))))))......)))))))')">Welcome</button>
         <button class="btn btn-primary rounded-pill px-3" type="button" onclick="load('GCCUUAAUGCACAUGGGCAAGCCCACGUAGCUAGUCGCGCGACACCAGUCCCAAAUAAUGUUCACCCAACUCGCCUGACCGUCCCGCAGUAGCUAUACUACCGACUCCUACGCGGUUGAAACUAGACUUUUCUAGCGAGCUGUCAUAGGUAUGGUGCACUGUCUUUAAUUUUGUAUUGGGCCAGGCACGAAAGGCUUGGAAGUAAGGCCCCGCUUGACCCGAGAGGUGACAAUAGCGGCCAGGUGUAACGAUACGCGGGUGGCACGUACCCCAAACAAUUAAUCACACUGCCCGGGCUCACAUUAAUCAUGCCAUUCGUUGCCGAUCCGACCCAUAUAGGAUGUGUAUGCCUCAUUCCCGGUCGGGGCGGCGACUGUUAACGCAUGAGAACUGAUUAGAUCUCGUGGUAGUGCUUGUCAAAUAGAAUGAGGCCAUUCCACAGACAUAGCGUUUCCCAUGAGCUAGGGGUCCCAUGUCCAGGUCCCCUAAAUAAAAGAGUCUCAC', '........((.((((((.((((..((((.((((.((((((((((((...((....((.(((.((((...(((.............(((((.((((((((...(((..((.(((....((((.......))))..)))))..)))...))))))))..)))))...............(((.(((((......(((((.......)))))..))))).)))))).))))))).))..))...)))))..))...))))).))))))))...................((((((((((.((..((((.((((((.....(((((((..((((((((((((.....))))))..........))))))..))))))).......))))))....))))..)).)))).))))))(((((((.....(((((....)))))....)))).))))))))))))).))((((((.((........)).))))))................')">RNA</button>
+        <button class="btn btn-primary rounded-pill px-3" type="button" onclick="load('TYKADLATYKADLATYKADLATYKADLATYKADLATYKADLA', '........(((((......)))))...(((((......)))))..')">Tykadla</button>
+        <button class="btn btn-primary rounded-pill px-3" type="button" onclick="load('LINELINE', '(((())))')">Line</button>
+        <button class="btn btn-primary rounded-pill px-3" type="button" onclick="load('lollipoplollipoplollipo', '(((((((.........)))))))')">Line</button>
     </form>
   </div>
 
@@ -291,6 +294,15 @@
     }
 
     var nc = updateContainer('WELCOME IN TEXT FOLDER', '...(((((((..((((((.........))))))......)))))))');
+
+    //default show
+    nc.displayNumbering(false);
+    nc.displayNodeOutline(false);
+    nc.displayLinks(false);
+    nc.displayDirectionArrows(false);
+
+    nc.displayPseudoknotLinks(false);
+    nc.displayProteinLinks(false);    
 
     if (localStorage.getItem("text") !== null) {
         load(localStorage.getItem("text"), localStorage.getItem("fold"));
